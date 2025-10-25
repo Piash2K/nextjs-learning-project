@@ -26,17 +26,19 @@ export default function ServicesPage() {
   return (
     <div>
       <p className='font-bold text-3xl'>ServicesPage</p>
-      {
+      <div className='flex justify-center'>
+        {
         data.map((d)=>{
           return (
             <div key={d._id} className='p-4'>
               <Link href={`/services/${d._id}`}> 
-              <img className='h-52 w-40' src={d.service_image}></img>
+              <img className='h-96 w-full' src={d.service_image}></img>
               </Link>
             </div>
           )
         })
       }
+      </div>
     </div>
   )
 }
