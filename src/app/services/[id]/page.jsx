@@ -24,7 +24,8 @@ export default async function ServiceDetailPage({ params }) {
 const {id} = await params;
   // console.log("Id iS:", id)
   const singleData = data.find(d=> d._id===id)
-  return (
+  if(singleData){
+    return (
     <div>
       <h1>ServiceDetailPage</h1>
       <p className="font-bold text-white">Id: {id}</p>
@@ -35,4 +36,13 @@ const {id} = await params;
       </p>
     </div>
   );
+  }
+  else{
+    return(
+      <>
+      <p>Not Found Service</p>
+      </>
+    )
+  }
+  
 }
